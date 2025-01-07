@@ -1,0 +1,45 @@
+
+  <div>
+    <ion-button (click)="addOrUpdateTask()" class="ion-margin" mode="ios">
+      Nueva Tarea
+      <ion-icon slot="end" name="add-circle-outline"></ion-icon>
+    </ion-button>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col class="custom-col" *ngFor="let task of tasks" size-lg="6" size-md="6" size-sm="12" size="12">
+          <ion-card>
+            <ion-grid>
+              <ion-row>
+                <ion-col class="center-horizontal" [style.color]="getTextColor(getPercentage(task))">
+                  
+                  <div class="center-horizontal">{{ getPercentage(task)}}  <span>%</span></div>
+                </ion-col>
+                <ion-col class="center-vertical">
+                  <div class="title">{{task.title}}</div>
+                </ion-col>
+                <ion-col>
+                    <ion-button (click)="addOrUpdateTask(task)" class="task-btn" mode="ios" size="small">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </ion-button><br>
+                    <ion-button (click)="confirmDeleteTask(task)" class="task-btn" color="danger" mode="ios"
+                      size="small">
+                      <ion-icon name="trash-outline"></ion-icon>
+                    </ion-button>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+
+          </ion-card>
+        </ion-col>
+      </ion-row>
+      
+      <ion-row *ngIf="!loading && !tasks.length">
+        <ion-col class="empty" size="12">
+          <ion-icon name="create-outline"></ion-icon>
+          <h4>No tienes tareas</h4>
+        </ion-col>
+      </ion-row>
+
+    </ion-grid>
+  </div>

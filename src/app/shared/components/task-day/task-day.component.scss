@@ -1,0 +1,36 @@
+ion-card {
+    border-radius: 15px;
+    margin: 4px;
+}
+
+.center-vertical {
+    display: flex;
+    align-items: center;
+}
+
+.center-horizontal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+ion-card:hover {
+    cursor: pointer;
+    background: var(--ion-color-light);
+}
+
+.title {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: start;
+    width: 180px;
+}
+
+.task-btn {
+    width: 40px;
+    align-items: center;
+}
+
+.empty {
+    padding-top: 15vh;
+}

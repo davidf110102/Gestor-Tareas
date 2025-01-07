@@ -1,0 +1,24 @@
+
+
+<ion-content>
+<app-header title="Perfil"></app-header>
+<div class="content ion-text-center">
+  <ion-icon class="avatar" name="person-circle-outline"></ion-icon>
+  <h2>{{user.name}}</h2>
+  <div>{{user.email}}</div>
+  
+  <ion-button (click)="signOut()" shape="round">
+    Cerrar Sesion
+    <ion-icon slot="end" name="log-out-outline"></ion-icon>
+  </ion-button>
+  <ion-list>
+    <div class="trophy-title">Trofeos</div>
+    <ion-item *ngFor="let trophy of trophies" [color]="trophy.condition ? 'success' : 'medium'">
+      {{ trophy.name }}
+      <ion-icon slot="end" [name]="trophy.condition ? 'checkmark' : 'close'"></ion-icon>
+      <ion-img slot="start" src="./assets/trofeo.jpg"></ion-img> <!-- Ajusta la ruta de la imagen -->
+    </ion-item>
+  </ion-list>
+
+</div>
+</ion-content>

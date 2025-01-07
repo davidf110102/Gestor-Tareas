@@ -1,0 +1,36 @@
+
+
+.custom-textarea {
+  font-size: 13px;
+  width: 84vw;
+}
+.custom-textarea2 {
+  height: 20px;
+}
+
+.custom-list {
+  background-color: #f4f5f8;
+}
+.fixed-header {
+  position: sticky;
+  top: 0;
+  background-color: #ffffff; 
+  z-index: 1000; 
+}
+.custom-list ion-item {
+  margin: 10px; 
+  background-color: white;
+  border-radius: 10px;
+  padding-top: 20px;
+
+}
+.center-horizontal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 84vw;
+  font-size: 20px;
+
+
+  
+}

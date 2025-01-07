@@ -1,0 +1,26 @@
+<ion-content color="light">
+  <app-header color="light" [centerTitle]=true [isModal]=true [title]="'Reflexion'"></app-header>
+  
+  <app-custom-input [control]="form.controls.description" type="textarea" label="Descripción del día"></app-custom-input>
+  <div class="validators" *ngIf="form.controls.description.errors && form.controls.description.dirty">
+      <div *ngIf="form.controls.description.errors?.['required']">Este campo es requerido</div>
+      <div *ngIf="form.controls.description.errors?.['minlength']">Este campo requiere al menos 4 caracteres</div>
+  </div>
+  <app-custom-input [control]="form.controls.good" type="textarea" label="Lo que he hecho bien"></app-custom-input>
+  <div class="validators" *ngIf="form.controls.good.errors && form.controls.good.dirty">
+      <div *ngIf="form.controls.good.errors?.['required']">Este campo es requerido</div>
+      <div *ngIf="form.controls.good.errors?.['minlength']">Este campo requiere al menos 4 caracteres</div>
+  </div>
+  <app-custom-input [control]="form.controls.bad" type="textarea" label="Lo que he hecho mal"></app-custom-input>
+  <div class="validators" *ngIf="form.controls.bad.errors && form.controls.bad.dirty">
+      <div *ngIf="form.controls.bad.errors?.['required']">Este campo es requerido</div>
+      <div *ngIf="form.controls.bad.errors?.['minlength']">Este campo requiere al menos 4 caracteres</div>
+  </div>
+</ion-content>
+<ion-footer>
+  <div class="ion-text-center">
+    <ion-button class="ion-margin" mode="ios" [disabled]="form.invalid" (click)="submit()" shape="round">
+      Guardar Cambios
+    </ion-button>
+  </div>
+</ion-footer>

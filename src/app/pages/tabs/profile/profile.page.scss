@@ -1,0 +1,38 @@
+.avatar{
+    font-size: 130px;
+}
+
+ion-button{
+    margin-top: 50px;
+}
+ion-list {
+    margin-top: 20px;
+  }
+  
+  
+  
+  ion-img {
+    width: 24px; /* Ajusta el tamaño de la imagen del trofeo según sea necesario */
+    height: 24px;
+    margin-right: 8px;
+  }
+  .content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  
+  .trophy-button {
+    margin-top: 10px;
+  }
+
+  .trophy-title {
+    font-size: 20px;
+    background-color:#f4f5f8;
+    color: rgb(109, 95, 14); 
+    padding: 5px; 
+    margin-bottom: 10px; 
+    font-weight: bold;
+    
+  }

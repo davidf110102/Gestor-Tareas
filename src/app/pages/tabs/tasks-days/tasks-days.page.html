@@ -1,0 +1,63 @@
+<ion-content>
+  <app-header [title]="formatoFechaEntrada"></app-header>
+  <div class="content">
+    <ion-button (click)="addOrUpdateTask()" class="ion-margin" mode="ios">
+      Nueva Tarea
+      <ion-icon slot="end" name="add-circle-outline"></ion-icon>
+    </ion-button>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col class="custom-col" *ngFor="let task of tasks" size-lg="6" size-md="6" size-sm="12" size="12">
+          <ion-card mode="ios">
+            <ion-grid>
+              <ion-row>
+                <ion-col class="center-vertical">
+                  <circle-progress class="custom-circle" [percent]="getPercentage(task)" [radius]="20" [outerStrokeWidth]="4"
+                    [innerStrokeWidth]="4" [outerStrokeColor]="'#78C000'" [innerStrokeColor]="'#C7E596'"
+                    [animation]="true" [animationDuration]="300" [subtitle]="">
+                  </circle-progress>
+                </ion-col>
+                <ion-col class="center-vertical">
+                  <div class="title">{{task.title}}</div>
+                </ion-col>
+                <ion-col>
+                    <ion-button (click)="addOrUpdateTask(task)" class="task-btn" mode="ios" size="small">
+                      <ion-icon name="eye-outline"></ion-icon>
+                    </ion-button><br>
+                    <ion-button (click)="confirmDeleteTask(task)" class="task-btn" color="danger" mode="ios"
+                      size="small">
+                      <ion-icon name="trash-outline"></ion-icon>
+                    </ion-button>
+                </ion-col>
+              </ion-row>
+            </ion-grid>
+
+          </ion-card>
+        </ion-col>
+      </ion-row>
+      <!-- Cargando tareas... -->
+      <ion-row *ngIf="loading">
+        <ion-col *ngfor="let p of [1,1,1,1,1,1,1,1,1,1,1,1,]" size-lg="6" size-md="6" size-sm="12" size="12">
+          <ion-card mode="ios">
+            <div *ngfor="let item of [1,1,1,1]">
+              <ion-skeleton-text animated style="width: 50%"></ion-skeleton-text>
+            </div>
+            <div *ngfor="let item of [1,1,1,1]">
+              <ion-skeleton-text animated style="width: 40%"></ion-skeleton-text>
+            </div>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+      <!-- No hay tareas -->
+      <ion-row *ngIf="!loading && !tasks.length">
+        <ion-col class="empty" size="12">
+          <ion-icon name="create-outline"></ion-icon>
+          <h4>No tienes tareas</h4>
+        </ion-col>
+      </ion-row>
+
+    </ion-grid>
+  </div>
+  
+</ion-content>

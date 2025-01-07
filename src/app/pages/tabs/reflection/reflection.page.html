@@ -1,0 +1,49 @@
+<ion-content>
+  <app-header title="Reflexión" class="fixed-header"></app-header>
+  <div class="content">
+    <ion-list class="custom-list">
+      <ion-item *ngFor="let row of items" (click)="addOrUpdateReflections(row[1])">
+        <ion-row>
+        <ion-col class="center-horizontal">
+          <ion-label class="ion-text-center">{{ row[0] }}</ion-label>
+        </ion-col>
+        </ion-row>
+        <ion-row>
+          <!--<ion-col class="espacioIcono">
+            <ion-icon name="happy-outline"></ion-icon>
+          </ion-col>-->
+          <ion-col>
+            <ion-textarea placeholder="Descripción del día" class="custom-textarea2" readonly></ion-textarea>
+          </ion-col>
+        </ion-row>         
+        <ion-row>       
+          <ion-col>
+            <ion-textarea auto-grow="true" debounce="500" class="custom-textarea" readonly>{{ getReflectionDescription(row[1]) }}</ion-textarea>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-textarea placeholder="Lo que he hecho bien" class="custom-textarea2" readonly></ion-textarea>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-textarea auto-grow="true" debounce="500"  class="custom-textarea" readonly>{{ getReflectionGood(row[1]) }}</ion-textarea>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-icon name="close-circle-outline" slot="start"></ion-icon>
+            <ion-textarea placeholder="Lo que he hecho mal" class="custom-textarea2" readonly></ion-textarea>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-textarea auto-grow="true" debounce="500"  class="custom-textarea" readonly>{{ getReflectionBad(row[1]) }}</ion-textarea>
+          </ion-col>
+        </ion-row>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>
+
